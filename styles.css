@@ -22,7 +22,7 @@ body {
 }
 
 .panel {
-  background-size: cover;
+  background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
@@ -32,11 +32,16 @@ body {
   flex: 0.1;
   margin: 10px;
   position: relative;
-  -webkit-transition: all 700ms ease-in;
+  -webkit-transition: all 500ms ease-in;
+  overflow: hidden;
+}
+
+.panel:hover {
+  opacity: 0.8;
 }
 
 .panel.active {
-  flex: 0.5;
+  flex: 0.3;
 }
 
 h3 {
@@ -64,18 +69,18 @@ h3 {
 }
 
 .panel3 {
-  background-image: url('./images/panel3.jpg');
+  background-image: url('./images/panel3.png');
   color: pink;
 }
 
 .panel4 {
-  background-image: url('./images/panel4.jpg');
+  background-image: url('./images/panel4.png');
   color: darkblue;
 }
 
 .panel5 {
   background-image: url('./images/panel5.png');
-  color: white;
+  color: red;
 }
 
 @media (max-width: 480px) {

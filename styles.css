@@ -18,6 +18,8 @@ body {
   overflow-x: hidden;
   width: 100vw;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .body {
@@ -27,9 +29,10 @@ body {
   align-items: center;
   justify-content: center;
   transition: transform 0.5s linear;
-  transform-origin: top left;
-  width: 100wv;
+  width: 100%;
+  min-height: 100%;
   background-color: white;
+  transform-origin: top left;
 }
 
 .body.show-nav {
@@ -57,7 +60,7 @@ body {
 }
 
 .body.show-nav .circle-panel {
-  transform: rotate(-65deg);
+  transform: rotate(-70deg);
 }
 
 .circle__button {

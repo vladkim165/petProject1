@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -12,16 +13,106 @@
   box-sizing: border-box;
 }
 
-body {
+body{
+  background-color: darkolivegreen;
+}
+
+.body {
   font-family: 'Muli', sans-serif;
   display: flex;
   flex-direction: column;
   margin: 0;
   align-items: center;
   justify-content: center;
+  transition: transform 0.5s linear;
+  transform-origin: top left;
+  width: 100wv;
+  transform: rotate(-20deg);
+  background-color: white;
 }
 
-.container {
+body.show-nav {
+  transform: rotate(-20deg);
+}
+
+.container {}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle-panel {
+  background-color: darkslateblue;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: transform 0.5s linear;
+  position: relative;
+}
+
+.circle__button{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background: transparent;
+  font-size: 26px;
+  color: white;
+}
+
+.circle__button:focus {
+  outline: none;
+}
+
+.circle__close-button {
+  left: 70%;
+}
+
+.circle__open-button {
+  top: 70%;
+}
+
+.navigation {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 10;
+  font-size: 24px;
+  color: white;
+  font-weight: bolder;
+}
+
+.navigation__bar {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 30px;
+}
+
+.navigation__bar-point{
+  margin: 30px 0;
+  /* transform: translateX(-100%); */
+  text-transform: uppercase;
+}
+
+.navigation__bar-point + .navigation__bar-point {
+  margin-left: 20px;
+}
+
+.navigation__bar-point + .navigation__bar-point + .navigation__bar-point{
+  margin-left: 40px;
+}
+
+.fas {
+  margin-right: 10px;
+}
+
+.container2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -61,7 +152,7 @@ h3 {
   opacity: 0;
 }
 
-.panel.active h3{
+.panel.active h3 {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
 }
@@ -91,18 +182,7 @@ h3 {
   color: red;
 }
 
-@media (max-width: 480px) {
-  .container {
-    width: 100vw;
-  }
-
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
-    display: none;
-  }
-}
-
-.container2 {
+.container3 {
   text-align: center;
   padding: 200px 0 100px 0;
 }

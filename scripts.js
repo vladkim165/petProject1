@@ -85,3 +85,15 @@ next.addEventListener('click', () => {
 
   progressUpdate()
 })
+
+const openButton = document.querySelector('.circle__open-button')
+const closeButton = document.querySelector('.circle__close-button')
+const pageBody = document.querySelector('.body')
+
+openButton.addEventListener('click', () => {
+  pageBody.classList.add('show-nav')
+})
+
+closeButton.addEventListener('click', () => {
+  pageBody.classList.remove('show-nav')
+})

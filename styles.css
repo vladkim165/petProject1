@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -13,12 +12,15 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: darkolivegreen;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 .body {
-  font-family: 'Muli', sans-serif;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -27,15 +29,17 @@ body{
   transition: transform 0.5s linear;
   transform-origin: top left;
   width: 100wv;
-  transform: rotate(-20deg);
   background-color: white;
 }
 
-body.show-nav {
+.body.show-nav {
   transform: rotate(-20deg);
 }
 
-.container {}
+.body.show-nav+.navigation .navigation__bar-point {
+  transform: translateX(0%);
+  transition-delay: 0.3s;
+}
 
 .circle-container {
   position: fixed;
@@ -52,12 +56,16 @@ body.show-nav {
   position: relative;
 }
 
-.circle__button{
+.body.show-nav .circle-panel {
+  transform: rotate(-65deg);
+}
+
+.circle__button {
   position: absolute;
+  cursor: pointer;
   top: 50%;
   left: 50%;
-  width: 50px;
-  height: 50px;
+  height: 100px;
   border: 0;
   background: transparent;
   font-size: 26px;
@@ -69,11 +77,13 @@ body.show-nav {
 }
 
 .circle__close-button {
-  left: 70%;
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
 }
 
 .circle__open-button {
-  top: 70%;
+  left: 60%;
 }
 
 .navigation {
@@ -81,9 +91,9 @@ body.show-nav {
   bottom: 40px;
   left: 0;
   z-index: 10;
-  font-size: 24px;
+  font-size: 18px;
   color: white;
-  font-weight: bolder;
+  font-weight: normal;
 }
 
 .navigation__bar {
@@ -94,18 +104,26 @@ body.show-nav {
   padding-left: 30px;
 }
 
-.navigation__bar-point{
+.navigation__bar-point {
   margin: 30px 0;
-  /* transform: translateX(-100%); */
+  transform: translateX(-100%);
   text-transform: uppercase;
+  transition: transform 0.4s ease-in;
 }
 
-.navigation__bar-point + .navigation__bar-point {
+.navigation__bar-point+.navigation__bar-point {
   margin-left: 20px;
+  transform: translateX(-150%);
 }
 
-.navigation__bar-point + .navigation__bar-point + .navigation__bar-point{
+.navigation__bar-point+.navigation__bar-point+.navigation__bar-point {
   margin-left: 40px;
+  transform: translateX(-200%);
+}
+
+.navigation__bar-point:hover {
+  color: #FF7979;
+  cursor: pointer;
 }
 
 .fas {
@@ -129,6 +147,7 @@ body.show-nav {
   flex: 0.1;
   margin: 10px;
   position: relative;
+  transition: all 500ms ease-in;
   -webkit-transition: all 500ms ease-in;
   overflow: hidden;
   border: 2px solid grey;
@@ -205,7 +224,7 @@ h3 {
   height: 4px;
   width: 100%;
   transform: translateY(-50%);
-  z-index: -1;
+  z-index: 1;
 }
 
 .progress {
@@ -216,7 +235,7 @@ h3 {
   height: 4px;
   width: 0;
   transform: translateY(-50%);
-  z-index: -1;
+  z-index: 1;
   transition: 1s;
 }
 
@@ -231,6 +250,7 @@ h3 {
   justify-content: center;
   border: 3px solid var(--line-empty);
   transition: 1s;
+  z-index: 2;
 }
 
 .circle.activeCircle {

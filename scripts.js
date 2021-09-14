@@ -97,3 +97,13 @@ openButton.addEventListener('click', () => {
 closeButton.addEventListener('click', () => {
   pageBody.classList.remove('show-nav')
 })
+
+const searchButton = document.querySelector('.search-panel__button')
+const searchPanel = document.querySelector('.search-panel-container')
+const searchInput = document.querySelector('.search-panel')
+
+
+searchButton.addEventListener('click', () => {
+  searchPanel.classList.toggle('active')
+  searchInput.focus()
+})

@@ -4,7 +4,7 @@
 }
 
 :root {
-  --line-fill: #7158e2;
+  --line-fill: #483D8B;
   --line-empty: #e0e0e0;
   --theme-main: darkolivegreen;
 }
@@ -14,7 +14,7 @@
 }
 
 body {
-  background-image: linear-gradient(90deg, #556B2F, #7158e2);
+  background-image: linear-gradient(90deg, #556B2F, #483D8B);
   font-family: 'Lato', sans-serif;
   overflow-x: hidden;
   width: 100vw;
@@ -92,7 +92,7 @@ body {
 
 .navigation {
   position: fixed;
-  bottom: 40px;
+  bottom: 100px;
   left: 0;
   z-index: 10;
   font-size: 18px;
@@ -134,31 +134,44 @@ body {
   margin-right: 10px;
 }
 
+.body.show-nav+.navigation .search-panel-container {
+  transform: translateX(25%);
+  transition: all 0.5s ease;
+  transition-delay: 0.3s;
+}
 .search-panel-container{
-  position: relative;
+  transform: translateX(-100%);
+  transition: 0.5s;
+  position: absolute;
+  margin: 15px 0;
+  padding: 0;
 }
 
 .search-panel{
-  background-color: #fff;
+  background-color: var(--line-empty);
+  color: var(--theme-main);
   border: none;
+  border-radius: 10px;
   font-size: 18px;
   height: 50px;
   width: 50px;
   padding: 15px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   margin: 0;
   opacity: 0;
+  background-color: var(--line-empty);
 }
 
 .search-panel__button{
-  background-color: #fff;
+  color: var(--line-empty);
+  background-color: transparent;
   border: 0;
   cursor: pointer;
   font-size: 24px;
   position: absolute;
+  transition: all 0.5s ease;
   top: 0;
   left: 0;
-  transition: transform 0.3s ease;
   margin: 0;
   padding: 0;
   height: 50px;
@@ -184,6 +197,7 @@ body {
   flex-direction: row;
   justify-content: center;
   width: 90vw;
+  margin-top: 100px;
 }
 
 .panel {
